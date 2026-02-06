@@ -124,7 +124,7 @@ with tab2:
 
 # --- NEW SECTION: High-Leak Chainages Analysis ---
 st.markdown("---")
-st.subheader("🚨 High-Risk Chainages Analysis (>10 Leak Events)")
+st.subheader("🚨 High-Risk Chainages Analysis")
 
 # Get unique chainages from digging data
 unique_chainages = sorted(df_manual_digging['Original_chainage'].unique())
@@ -140,7 +140,7 @@ for i, target_chainage_val in enumerate(unique_chainages):
         high_leak_chainages.append(target_chainage_val)
     progress_bar.progress((i + 1) / len(unique_chainages))
 
-st.success(f"✅ Found {len(high_leak_chainages)} high-leak chainages (>10 leaks each)")
+st.success(f"✅ Found {len(high_leak_chainages)} high-risk chainages")
 
 if high_leak_chainages:
     st.write("**High-risk chainages vulnerable for pilferage:**")
