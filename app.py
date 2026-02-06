@@ -136,7 +136,7 @@ st.info("🔍 Scanning all chainages for high leak activity...")
 progress_bar = st.progress(0)
 for i, target_chainage_val in enumerate(unique_chainages):
     df_leaks_filtered = df_lds_IV[abs(df_lds_IV['chainage'] - target_chainage_val) <= tolerance]
-    if len(df_leaks_filtered) > 10:
+    if len(df_leaks_filtered) > 20:
         high_leak_chainages.append(target_chainage_val)
     progress_bar.progress((i + 1) / len(unique_chainages))
 
